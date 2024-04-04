@@ -5,4 +5,5 @@ from .models import Appointment
 
 class makeAppointment(generic.ListView):
     model = Appointment
+    template_name = "book.html"
  
