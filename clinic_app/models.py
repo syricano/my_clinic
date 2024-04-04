@@ -20,12 +20,13 @@ class Doctor(models.Model):
     profile_information = models.TextField()
 
 class Administrator(models.Model):
-    pass
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
 
 class Appointment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name ="appointments")
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="appointments")
-    admin = models.ForeignKey(Administrator, on_delete=models.CASCADE, related_name="appointments")
+    admin = models.ForeignKey(Administrator, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateField()
     time = models.TimeField()
     status = models.IntegerField(choices=STATUS, default=0)
