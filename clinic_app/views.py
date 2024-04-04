@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
+from django.views import generic 
+from .models import Appointment
 # Create your views here.
-def index(request):
-    return HttpResponse("Welcome to Aesthetic Clinic!")
+
+class makeAppointment(generic.ListView):
+    model = Appointment
+ 
