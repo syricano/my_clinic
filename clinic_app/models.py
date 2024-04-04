@@ -19,10 +19,15 @@ class Doctor(models.Model):
     specialization = models.CharField(max_length=100)
     profile_information = models.TextField()
 
+    
+    def __str__(self):
+        return f"Dr {self.firstName} { self.lastName}"
+
 class Administrator(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
 
+    
 class Appointment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name ="appointments")
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="appointments")
@@ -30,6 +35,9 @@ class Appointment(models.Model):
     date = models.DateField()
     time = models.TimeField()
     status = models.IntegerField(choices=STATUS, default=0)
+
+    def __str__(self):
+        return f"{self.user}'s Appointment"
 
 class Reminder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reminders")
