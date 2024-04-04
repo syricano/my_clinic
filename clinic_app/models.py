@@ -27,11 +27,19 @@ class Administrator(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
 
-    
+class Therapy(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="therapies")
+
+    def __str__(self):
+        return self.name
+
 class Appointment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name ="appointments")
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="appointments")
     admin = models.ForeignKey(Administrator, on_delete=models.SET_NULL, null=True, blank=True)
+    therapies = models.ManyToManyField(Therapy, related_name="appointments", blank=True)  # ManyToManyField for therapies
     date = models.DateField()
     time = models.TimeField()
     status = models.IntegerField(choices=STATUS, default=0)
@@ -44,9 +52,3 @@ class Reminder(models.Model):
     message = models.TextField()
     datetime = models.DateTimeField(auto_now_add=True)
 
-
-
-class Therapy(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name="therapies")
