@@ -1,1 +1,1 @@
-web: gunicorn my_clinic.wsgi  --log-file -
+web: gunicorn booking.wsgi  --log-file -
