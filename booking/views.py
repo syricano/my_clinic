@@ -13,5 +13,5 @@ class makeAppointment(generic.ListView):
     model = Appointment
 
     # Specify the template to render
-    template_name = "booking/booking.html"
+    template_name = "booking.html"
  

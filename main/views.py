@@ -15,4 +15,4 @@ class HomePageView(generic.ListView):
     model = HomePage
 
     # Specify the template to render
-    template_name = "main/base.html"
+    template_name = "base.html"

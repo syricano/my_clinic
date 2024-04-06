@@ -8,4 +8,4 @@ class AboutUs(generic.ListView):
     # Specify the model to be used for the view
     model = AboutUs
     # Specify the template to render
-    template_name = "about/about.html"
+    template_name = "about.html"
