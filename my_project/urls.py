@@ -18,10 +18,16 @@ from django.contrib import admin
 from django.urls import include, path
 from main import views as index_views
 
+# URL patterns list for routing URLs to views
 urlpatterns = [
+    # Admin site URLs
     path('admin/', admin.site.urls),
+    # Include URLs from the 'main' app
     path('', include("main.urls")),
+    # Include URLs from the 'booking' app
     path('booking/', include("booking.urls")),
+    # Include URLs from the 'contact' app
     path('contact/', include("contact.urls")),
+    # Include URLs from the 'about' app
     path('about/', include("about.urls")),    
 ]

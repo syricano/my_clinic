@@ -66,8 +66,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Root URL configuration
 ROOT_URLCONF = 'my_project.urls'
 
+# Template configuration
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -84,6 +86,7 @@ TEMPLATES = [
     },
 ]
 
+# WSGI application
 WSGI_APPLICATION = 'my_project.wsgi.application'
 
 
@@ -97,6 +100,7 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 #    }
 #}
 
+# Database configuration
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
