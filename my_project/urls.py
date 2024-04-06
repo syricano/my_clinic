@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from main import views as index_views
+from main import views as base_views
 
 # URL patterns list for routing URLs to views
 urlpatterns = [
