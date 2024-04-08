@@ -25,15 +25,10 @@ urlpatterns = [
     # Include URLs from the 'main' app
     path('', include("main.urls"), name = "main"),
 
-    # Include URLs from the 'register' app
-    path('register/', include("register.urls"), name = "register"),
-
     # Include URLs from the 'booking' app
     path('booking/', include("booking.urls"), name = "booking"),
     
     # Include URLs from the 'contact' app
     path('contact/', include("contact.urls"), name = "contact"),
     
-    # Include URLs from the 'about' app
-    path('about/', include("about.urls"), name = "about"),    
 ]
