@@ -22,8 +22,8 @@ urlpatterns = [
     # Admin site URLs
     path('admin/', admin.site.urls, name = "admin"),
 
-    # Include URLs from the 'main' app
-    path('', include("main.urls"), name = "main"),
+    # Include URLs from the 'clinic' app
+    path('', include("clinic.urls"), name = "clinic"),
 
     # Include URLs from the 'booking' app
     path('booking/', include("booking.urls"), name = "booking"),
