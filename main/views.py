@@ -5,6 +5,7 @@ from .models import HomePage
 # Create your views here.
 
 class HomePageView(generic.ListView):
+
     """
     View class for displaying the home page.
 
@@ -13,7 +14,9 @@ class HomePageView(generic.ListView):
 
     # Specify the model to be used for the view
    
-    queryset = HomePage.objects.all()
+    # queryset = HomePage.objects.all()
+
+    model = HomePage
 
     # Specify the template to render
     template_name = "base.html"
