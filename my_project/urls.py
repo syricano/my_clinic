@@ -16,25 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from main import views as base_views
 
 # URL patterns list for routing URLs to views
 urlpatterns = [
     # Admin site URLs
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name = "admin"),
 
     # Include URLs from the 'main' app
-    path('', include("main.urls")),
+    path('', include("main.urls"), name = "main"),
 
     # Include URLs from the 'register' app
-    path('register/', include("register.urls")),
+    path('register/', include("register.urls"), name = "register"),
 
     # Include URLs from the 'booking' app
-    path('booking/', include("booking.urls")),
+    path('booking/', include("booking.urls"), name = "booking"),
     
     # Include URLs from the 'contact' app
-    path('contact/', include("contact.urls")),
+    path('contact/', include("contact.urls"), name = "contact"),
     
     # Include URLs from the 'about' app
-    path('about/', include("about.urls")),    
+    path('about/', include("about.urls"), name = "about"),    
 ]

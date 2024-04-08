@@ -12,7 +12,8 @@ class HomePageView(generic.ListView):
     """
 
     # Specify the model to be used for the view
-    model = HomePage
+   
+    queryset = HomePage.objects.all()
 
     # Specify the template to render
     template_name = "base.html"
